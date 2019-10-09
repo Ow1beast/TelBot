@@ -13,7 +13,14 @@ class HelpCommand extends Command
 
     public function handle()
     {
-        $this->replyWithMessage(["text"=>"This is help command  "]);
+        $response = '';
+        $commands = $this->getTelegram()->getCommands();
+
+        foreach ($commands as $command){
+            $response .= "/" . $command->getName() . " - ";
+            $response .= $command->getDescription() . PHP_EOL;
+        }
+        $this->replyWithMessage(["text" => $response]);
     }
 
 }
