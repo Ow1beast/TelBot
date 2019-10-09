@@ -38,4 +38,8 @@ abstract class Table{
     static function getById($id){
         return self::get(["id" => $id]);
     }
+
+    static function max($join, $column = null, $where = null){
+        return Database::instance()->max(static::$table_name, $join, $column, $where);
+    }
 }

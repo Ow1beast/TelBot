@@ -12,7 +12,7 @@ class Database extends Medoo
     {
         parent::__construct([
             'database_type' => 'mysql',
-            'database_name' => 'name',
+            'database_name' => 'bot',
             'server' => 'localhost',
             'username' => 'root',
             'password' => ''
